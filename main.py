@@ -12,11 +12,16 @@ user_params = {
     "agreeTermsOfService": "yes",
     "notMinor": "yes",
 }
-#Create a new user
-# response = requests.post(url=pixela_endpoint, json=user_params)
-# print(response.text) #PRINTS: {"message":"Success. Let's visit https://pixe.la/@fatemakotha , it is your profile page!","isSuccess":true}
+#CREATE A NEW USER
+response = requests.post(url=pixela_endpoint, json=user_params)
+print(response.text) #PRINTS: {"message":"Success. Let's visit https://pixe.la/@fatemakotha , it is your profile page!","isSuccess":true}
 
 #..........................................................................................................................................................
+
+
+
+
+#CREATE A GRAPH
 
 pixela_endpoint_create_graph = f"{pixela_endpoint}/{USERNAME}/graphs"
 create_graph_params = {
@@ -36,6 +41,10 @@ headers = {
 #CHECK OUT THE GRAPH BY GOING HERE: "https://pixe.la/v1/users/fatemakotha/graphs/graph1.html"
 
 #..............................................................................................................................................................
+
+
+
+
 
 #ADD A PIXEL to graph using POST
 GRAPH_ID = "graph1"
@@ -69,6 +78,9 @@ print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
 
 #...............................................................................................................................
 
+
+
+
 #UPDATE A PIXEL: USING requests.put()
 
 pixela_endpoint_update_pixel = f"{pixela_endpoint}/{USERNAME}/graphs/graph1/{today_format_changed}"
@@ -81,6 +93,11 @@ update_pixel = requests.put(url=pixela_endpoint_update_pixel, json=update_params
 print(update_pixel.text)
 
 #...............................................................................................................................
+
+
+
+
+
 
 #DELETE A PIXEL: USING requests.delete()
 
