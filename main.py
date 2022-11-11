@@ -60,9 +60,20 @@ add_to_graph_params = {
     "date": today.strftime("%Y%m%d"),
     "quantity": "7",
 }
-
-add_input_to_graph = requests.post(url=pixela_endpoint_add_to_graph, json=add_to_graph_params, headers=headers)
-print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
+#
+# add_input_to_graph = requests.post(url=pixela_endpoint_add_to_graph, json=add_to_graph_params, headers=headers)
+# print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
 # CHECK IT PUT HERE: https://pixe.la/v1/users/fatemakotha/graphs/graph1.html
 
 #...............................................................................................................................
+
+#UPDATE A PIXEL: USING requests.put()
+
+pixela_endpoint_update_pixel = f"{pixela_endpoint}/{USERNAME}/graphs/graph1/{today_format_changed}"
+
+update_params = {
+    "quantity": "29",
+}
+
+update_pixel = requests.put(url=pixela_endpoint_update_pixel, json=update_params, headers=headers)
+print(update_pixel.text)
