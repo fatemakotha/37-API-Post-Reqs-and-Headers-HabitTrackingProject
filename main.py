@@ -38,7 +38,12 @@ headers = {
 #..............................................................................................................................................................
 GRAPH_ID = "graph1"
 pixela_endpoint_add_to_graph = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
+
+#The 2 lines of code below mean the same
 today = datetime.today()
+today = datetime(year=2022, month=11, day=11)
+
+
 print(today) #2022-11-11 16:38:15.214336
 
 today_format_changed = today.strftime("%Y%m%d") #look into this: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
