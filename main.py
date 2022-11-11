@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "fatemakotha"
 TOKEN = "jh5jh5jh5jjh5jh5"
@@ -37,14 +38,21 @@ headers = {
 #..............................................................................................................................................................
 GRAPH_ID = "graph1"
 pixela_endpoint_add_to_graph = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
+today = datetime.today()
+print(today) #2022-11-11 16:38:15.214336
+
+today_format_changed = today.strftime("%Y%m%d")
+print(today_format_changed) #20221111
+
+
 
 add_to_graph_params = {
     "date": "20221111",
     "quantity": "7",
 }
 
-add_input_to_graph = requests.post(url=pixela_endpoint_add_to_graph, json=add_to_graph_params, headers=headers)
-print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
+# add_input_to_graph = requests.post(url=pixela_endpoint_add_to_graph, json=add_to_graph_params, headers=headers)
+# print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
 #CHECK IT PUT HERE: https://pixe.la/v1/users/fatemakotha/graphs/graph1.html
 
 #...............................................................................................................................
