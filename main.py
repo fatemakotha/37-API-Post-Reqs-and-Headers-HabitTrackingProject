@@ -30,5 +30,21 @@ headers = {
     "X-USER-TOKEN": "jh5jh5jh5jjh5jh5",
 }
 
-create_graph_response = requests.post(url=pixela_endpoint_create_graph, json=create_graph_params, headers=headers)
-print(create_graph_response.text)
+# create_graph_response = requests.post(url=pixela_endpoint_create_graph, json=create_graph_params, headers=headers)
+# print(create_graph_response.text)
+#CHECK OUT THE GRAPH BY GOING HERE: "https://pixe.la/v1/users/fatemakotha/graphs/graph1.html"
+
+#..............................................................................................................................................................
+GRAPH_ID = "graph1"
+pixela_endpoint_add_to_graph = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
+
+add_to_graph_params = {
+    "date": "20221111",
+    "quantity": "7",
+}
+
+add_input_to_graph = requests.post(url=pixela_endpoint_add_to_graph, json=add_to_graph_params, headers=headers)
+print(add_input_to_graph.text) #prints: {"message":"Success.","isSuccess":true}
+#CHECK IT PUT HERE: https://pixe.la/v1/users/fatemakotha/graphs/graph1.html
+
+#...............................................................................................................................
