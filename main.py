@@ -77,8 +77,8 @@ update_params = {
     "quantity": "29",
 }
 
-# update_pixel = requests.put(url=pixela_endpoint_update_pixel, json=update_params, headers=headers)
-# print(update_pixel.text)
+update_pixel = requests.put(url=pixela_endpoint_update_pixel, json=update_params, headers=headers)
+print(update_pixel.text)
 
 #...............................................................................................................................
 
