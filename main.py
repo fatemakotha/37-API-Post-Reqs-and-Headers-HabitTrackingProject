@@ -41,7 +41,7 @@ pixela_endpoint_add_to_graph = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 today = datetime.today()
 print(today) #2022-11-11 16:38:15.214336
 
-today_format_changed = today.strftime("%Y%m%d")
+today_format_changed = today.strftime("%Y%m%d") #look into this: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 print(today_format_changed) #20221111
 
 
